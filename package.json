@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "modernweb",
   "version": "0.0.1",
   "description": "Boilerplate with postcss, typescript, rollup, and npm scripts for building, watching and reloading",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/batfink/boilerplate.git"
+    "url": "git+https://github.com/tropperstyle/modernweb.git"
   },
   "keywords": [
     "Typescript",
@@ -23,12 +23,8 @@
     "npm",
     "scripts"
   ],
-  "author": "Victor Nystad",
+  "author": "Jonathan Tropper",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/batfink/boilerplate/issues"
-  },
-  "homepage": "https://github.com/batfink/boilerplate#readme",
   "devDependencies": {
     "autoprefixer": "latest",
     "browser-sync": "latest",
