@@ -1,21 +1,14 @@
 {
   "name": "boilerplate",
   "version": "0.0.1",
-  "description": "Boilerplate with postcss, babel, rollup, and npm scripts for building, watching and reloading",
-  "main": "dist/bundle.js",
-  "jsnext:main": "js/index.js",
-  "babel": {
-    "presets": [
-      "es2015-rollup"
-    ]
-  },
+  "description": "Boilerplate with postcss, typescript, rollup, and npm scripts for building, watching and reloading",
   "scripts": {
     "start": "npm run watch:js & npm run watch:css & npm run serve",
     "preserve": "npm run build:js & npm run build:css",
     "serve": "browser-sync start --server public --server dist --files 'dist/*, public/*'",
     "watch:js": "chokidar 'lib/*.js' 'js/*js' -c 'npm run build:js'",
     "watch:css": "chokidar 'css/*.css' -c 'npm run build:css'",
-    "build:js": "mkdir -p dist && rollup -c -o dist/bundle.js",
+    "build:js": "mkdir -p dist && tsc js/index.ts --module es2015 --target es5 && rollup -o dist/bundle.js -f iife js/index.js",
     "build:css": "postcss  -u postcss-import -u autoprefixer --autoprefixer.browsers 'last 2 versions' -u postcss-nested -o dist/style.css css/index.css"
   },
   "repository": {
@@ -23,7 +16,7 @@
     "url": "git+https://github.com/batfink/boilerplate.git"
   },
   "keywords": [
-    "Babel",
+    "Typescript",
     "Postcss",
     "es6",
     "browser-sync",
@@ -38,13 +31,12 @@
   "homepage": "https://github.com/batfink/boilerplate#readme",
   "devDependencies": {
     "autoprefixer": "latest",
-    "babel-preset-es2015-rollup": "latest",
     "browser-sync": "latest",
     "chokidar-cli": "latest",
     "postcss-cli": "latest",
     "postcss-import": "latest",
     "postcss-nested": "latest",
     "rollup": "latest",
-    "rollup-plugin-babel": "latest"
+    "typescript": "latest"
   }
 }
